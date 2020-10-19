@@ -1,0 +1,86 @@
+<div wm-slider>
+    <p>
+        <img class="imagensSlide"
+            src="https://scontent.fcgh4-1.fna.fbcdn.net/v/t1.0-9/103536253_852454195242531_8556524456609219097_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeE4_XcK9UyBCyXgdLnjAdI7vNxFrn6NkA283EWufo2QDcxiJrt1qsRWPQqEXb_vv6x4pfwBlX879eIvmkJWJ_zS&_nc_ohc=h8e7yu1Z6EcAX97h5EF&_nc_ht=scontent.fcgh4-1.fna&oh=44b797a22a4d6c8970b59a698e0ea7a8&oe=5FB18398"
+            alt="">
+    </p>
+
+    <p>
+        <img class="imagensSlide"
+            src="https://c2bimoveislajeado.com.br/wp-content/uploads/2019/11/m%C3%B3veis-planejados.jpg" alt="">
+    </p>
+
+    <p>
+        <img class="imagensSlide"
+            src="https://edyplanejados.com.br/wp-content/uploads/2017/08/cozinha_07-1024x5761-1014x487.jpg" alt="">
+    </p>
+
+    <p>
+        <img class="imagensSlide"
+            src="https://www.moveisplanejados.srv.br/wp-content/uploads/2019/04/moveis-planejados-vila-carr%C3%A3o.jpg"
+            alt="">
+    </p>
+</div>
+
+<style>
+    p {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        display: none;
+    }
+
+    p img {
+        width: 1000px;
+        height: 700px;
+    }
+</style>
+<script>
+    slider()
+
+    function passaImagem(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => passaImagem(elem, novoInicio, fim, passo, callback), 7);
+
+        } else {
+            callback()
+        }
+    }
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slide[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.diplay = 'block'
+        
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, ()=> {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1
+        return i < list.length ? lista[i] : lista[0]
+    }
+
+    
+/*s
+        const p = document.querySelector('[wm-slider] > p')
+        p.style.display = 'block'
+    
+        passaImagem(p, 1500, -1500, 4, () => {
+            console.log('Ja era');
+        })
+    */
+</script>

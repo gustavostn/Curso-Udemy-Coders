@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encolhendo listas UL LI</title>
+    <style>
+        ul li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <span opcao-primaria> Ambientes </span>
+
+                    <ul>
+                        <li>Cozinha</li>
+                        <li>Sala de estar</li>
+                        <li>
+                            <span opcao-primaria> Dormitorio </span>
+                            <ul>
+                                <li>Casal</li>
+                                <li>Solteiro</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span opcao-primaria> Contatos </span>
+                    <ul>
+                        <li id='passar-mouse'>WhatsApp</li>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    /*document.querySelectorAll('[opcao-primaria]').forEach(folder => {
+        folder.onclick = function(e) {
+
+            const ul = folder.nextElementSibling
+            const displayAtual = ul.style.display
+            ul.style.display = displayAtual === 'none' ? 'block' : 'none'
+            
+            
+        }
+    })
+    */
+    const invisivel = document.getElementById('passar-mouse'); 
+    invisivel.display = 'hidden'
+
+   document.querySelectorAll('[passar-mouse]').forEach(folder => {
+       folder.onmouseover = function (e){
+
+           const li = folder.nextElementSibling
+           console.log('passou');
+       }
+   })
+</script>
+
+</html>

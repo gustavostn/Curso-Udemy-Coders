@@ -1,0 +1,47 @@
+<h1>Formulario</h1>
+
+
+<form method="POST">
+    <input type="hidden" value="alteracao">
+    <input type="input" name="name" autocomplete="name" placeholder="Nome">
+    <input type="input" name="phone_number" autocomplete="tel" placeholder="Celular">
+    <input type="input" name="email" autocomplete="email" placeholder="Email">
+
+    <input type="radio" name="tipo" value="professor"> Professor
+    <input type="radio" name="tipo" value="aluno"> Aluno
+
+    <select name="modelosCel">
+        <option value="">Selecione</option>
+        <option value="iphone">iphone</option>
+        <option value="xiomi">xiomi</option>
+        <option value="samsung">samsung</option>
+    </select>
+
+    <select name="" multiple="8" id="ambientes">Ambientes para orçamento
+        <option value="dormitorioSolteiro">Dormitorio Solteiro</option>
+        <option value="dormitorioCasal">Dormitorio Casal</option>
+        <option value="lavanderia">lavanderia</option>
+        <option value="cozinha">Cozinha</option>
+        <option value="salaEstar">Sala de estar</option>
+        <option value="salaJantar">Sala de jantar</option>
+        <option value="lavabo">Lavabo</option>
+        <option value="banheiro">Banheiro</option>
+    </select>
+
+    <button formaction="http://localhost:8080/orcamento">Enviar</button>
+    <button formaction="http://localhost:8080/orcamento/alteracao" value="alteracao">Alterar</button>
+
+</form>
+
+<style>
+    input,
+    select {
+        display: block;
+        margin: 10px;
+
+    }
+
+    input[type=radio] {
+        display: inline;
+    }
+</style>

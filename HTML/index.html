@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Index sessão HTML</title>
+
+</head>
+
+<body>
+    <header>Está é uma pagina que substitui o conteudo da section</header>
+
+    <nav>Conteudo estudados</nav>
+    <ul>
+        <li><a href="./exerciciosHTML/anatomia.html">Anatomia do HTML</a></li>
+        <li><a href="./exerciciosHTML/cssBasico.html">pouco de CSS</a></li>
+        <li><a href="./exerciciosHTML/encolhendoListas.html">Listas</a></li>
+        <li><a href="./exerciciosHTML/navegarPelaPagina.html">Navegação pela pagina</a></li>
+        <li><a href="./exerciciosHTML/navegarPelaPagina.html">Criação de tabelas</a></li>
+        <li><a href="./exerciciosHTML/form/form.html">Formularios enviando resposta para backEnd</a>
+        <li><a href="./exerciciosHTML/imagens.html">Imagens</a>
+        </li>
+    </ul>
+
+
+    <section id="visualizacao-pagina">Seja bem-vindo!!!</section>
+
+    <footer>Roda pé da página</footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('visualizacao-pagina')
+
+            link.onclick = function (e) {
+                e.preventDefault()
+
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+
+</html>
