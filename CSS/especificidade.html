@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especifidade CSS</title>
+    <style>
+        /* 
+        1. Regra com !important
+        2. Seletores mais específicos 
+        3. Última regra processada 
+        
+        */
+        p {
+            border: 5px solid;
+            background-color: aqua;
+        }
+
+        .observacao {
+            margin: 40px;
+            padding: 50px;
+            border: 3px dashed black;
+            background-color: gray;
+            text-align: center;
+            color: pink!important;
+        }
+        p.observacao{
+            padding: 100px;
+            font-size: 25px;
+            color: black;
+            background: linear-gradient(to left, purple, blue);
+        }
+    </style>
+</head>
+
+<body>
+    <p class="observacao">LOOK THIS DUDE</p>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+
+    <style>
+        body {
+            font-size: 35px;
+            color: white;
+            background-color: tomato;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div {
+            background-color: khaki;
+        }
+
+        span {
+            background-color: yellowgreen;
+        }
+
+        li {
+            background-color: peru;
+        }
+
+        div,
+        span,
+        li {
+            width: 50%;
+            width: 200px;
+            height: 250px;
+            height: 5%;
+            padding-top: 25px;
+            text-align: center;
+            
+            /*display: block; = Cada elemente possui a sua linha, considerando altura e largura */ 
+            /*display: inline; = Os elementos ficam na mesma linha mas desconsideram altura e largura */
+            display: inline-block; /*= Elementos ficam na mesma linha, considerando altura e largura */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificidade 2</title>
+    <style>
+        * {
+            margin: 50px;
+        }
+        div:hover{
+            background-color: yellow;
+        }
+        div {
+            color: rgb(255, 0, 85);
+            font-size: 55px;
+            text-decoration: underline;
+        }
+
+        div[wm-cor] {
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            text-decoration: double;
+        }
+
+        #unico2 {
+            color: blue;
+            font-size: 25px;
+            text-decoration: line-through;
+        }
+
+        .estilo {
+            color: pink;
+            font-size: 45px;
+            text-decoration: overline;
+        }
+        div:hover{
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="unico1" class="estilo" style="color: red; font-size: 35px;  text-decoration: overline">
+        #unico1 vs .estilo vs <strong>inline</strong>
+    </div>
+
+    <div id="unico2" class="estilo">
+        <strong>#unico2</strong> vs .estilo 
+    </div>
+
+    <div wm-cor><strong>wm-cor</strong></div>
+
+    <div class="estilo">.estilo</div>
+
+    <div>elemento</div>
+
+</body>
+
+</html>

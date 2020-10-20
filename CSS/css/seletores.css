@@ -1,0 +1,34 @@
+.tag{
+    border: 2px solid black;
+    margin: 5px 5px;
+}
+div > p{
+    background-color: aqua;
+}
+#aninhado > div{
+    background-color: palevioletred;
+}
+#aninhado section{
+    text-transform: uppercase;
+}
+p + ul{
+    background-color: gold;
+}
+p ~ ol{
+    background-color: darkgreen;
+}
+[tipo]{
+    font-style: oblique;
+    text-decoration: overline;
+}
+[tipo=profissao]{
+    font-style: inherit;
+    font-weight: bold;
+
+}
+span:nth-child(1){
+    font-size: 25px;
+}
+section > :nth-child(odd){
+    background-color: gold;
+}

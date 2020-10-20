@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomia CSS</title>
+    <style>
+        .selector {
+            font-size: 55px;
+            color: #456722;
+            /* funcoes */
+            border: 5px solid red;
+            width: calc(100% - 120px)
+        }
+
+        /* usando pseudo-classe */
+        .selector:hover {
+            background-color: aqua;
+        }
+
+        /* pseudo-elemento */
+        .selector::first-letter {
+            color: pink
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="selector">Conteudo</div>
+
+</body>
+
+</html>
