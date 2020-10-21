@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box sizing</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* USa-se para aplicar o box-sizing e outros metodos e todos os conteudos */
+        }
+        body {
+            height: 100%;
+            font-size: 45px;
+            margin: 0;
+            
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 200px;
+            border: solid 20px;
+            
+            /* border-box: considera o tamanho total que deseja atingir */
+            /* content-box: considera o tamanho do conteudo*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        O tamanho da box é...
+    </div>
+</body>
+
+</html>

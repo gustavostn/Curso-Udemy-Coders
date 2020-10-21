@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unidade 3</title>
+    <style>
+        .fora {
+            position: relative;
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+
+        .dentro {
+            background-color: mediumblue;
+            height: 100px;
+            width: 90%;
+            position: static;
+            /*Ira utilizar apenas o espaco do conteudo */
+            position: relative;
+            /*Ira utilizar apenas o espaco do conteudo */
+            position: absolute;
+            /*Ira respeitar o tamanho total do conteudo (medidas + padding/margins) */
+            position: fixed;
+            /* Ira respeitar o tamanho do viewport */
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fora">
+        <div class="dentro">
+
+        </div>
+    </div>
+</body>
+
+</html>

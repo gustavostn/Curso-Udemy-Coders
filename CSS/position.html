@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        div {
+            font-size: 2em;
+            padding: 30px;
+            border: solid 5px;
+        }
+
+        .static {
+            /* Padrao no navegador, nao se movimenta */
+            top: 200px;
+            left: 150px;
+            background-color: steelblue;
+        }
+
+        .fixed {
+            /* O objeto se mantem fixo */
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+        }
+
+        .relative {
+            /* Se posiciona conforme o elemento anterior */
+            position: relative;
+            left: 50px;
+            top: 15px;
+            background-color: pink;
+        }
+
+        .absolute {
+            /* Caso nao tenha classe pai ,se posiciona em relação a pagina */
+            position: absolute;
+            right: 150px;
+            bottom: 12px;
+            background-color: rebeccapurple;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 140px;
+            top: 250px;
+            background-color: lightseagreen;
+        }
+
+        .absolute2 {
+            position: absolute;
+            /*ira se posicionar conforme a sua classe pai */
+            top: 10px;
+            left: 55px;
+            background-color: #222;
+        }
+
+        .sticky {
+            position: -webkit-sticky;
+            /*safari*/
+            position: sticky;
+            background-color: #777;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrao)</div>
+    <div class="fixed">Fixes</div>
+    <div class="relative">Relative</div>
+    <div class="absolute">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa!</p>
+
+</body>
+
+</html>
