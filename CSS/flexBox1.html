@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        div {
+            border: 5px solid rgb(12, 158, 158);
+            font-size: 40px;
+            margin: 15px;
+        }
+        .big{
+            font-size: 1.5em;
+        }
+        .flex-container{
+            display: flex  ;
+            /* Por padrao a direction é row */
+            
+            flex-direction: column;
+            /* flex-direction: column-reverse; */
+            
+            flex-direction: row;
+            /* flex-direction: row-reverse; */
+            
+            width: 50%;
+            flex-wrap: wrap;
+            /* Wrap é utilizado para os elementos respeitarem as dimensoes */
+            
+            flex-wrap: wrap-reverse;
+            /* Inverte as linhas */
+            
+            flex-flow: row-reverse wrap;
+            /* Mistura de flex-direction com flex-wrap */
+
+            height: 200px;
+            flex-flow: wrap column;
+            /* Como a limitação da altura ele fez diversas colunas */
+
+            flex-flow: row wrap;
+
+            justify-content: flex-start;
+            justify-content: flex-end;
+            
+            justify-content: center;
+            /* Alinha os itens no centro */
+            
+            justify-content: space-around;
+            /* Espaça os itens para que fiquem organizados dentro do container */
+
+            justify-content: space-between;
+            /* Espaço somente entre os elementos e nao nas bordas */
+
+            /* Cross Axis */
+            height: 500px;
+            align-items: stretch;
+
+            align-items: baseline;
+            /* Alinhas pelo tamanho da fonte, varia de acordo com o item */
+
+            align-items: flex-start;
+            /* Alinhas por cima, inicio */
+
+            align-items: flex-end;
+            /* Alinha os itens por baixo, final */
+
+            align-items: center;
+            /* Alinha os itens no centro */
+
+            /* Para mais de uma linha */
+            align-content: flex-start;
+            /* Toda as linhas vao para o inicio do content */
+
+            align-content: flex-end;
+            /* Todas as linhas voa para o final do content */
+
+            align-content: center;
+            /* Alinhas as linhas no centro */
+
+            align-content: space-around;
+            /* Espaçamento igual entre os elementos */
+
+            align-content: space-between;
+            /* Espaçamento somente entre elementos do content*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div class="big">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+</body>
+
+</html>

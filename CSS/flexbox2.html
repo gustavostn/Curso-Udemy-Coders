@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box 2</title>
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 450px;
+            width: 75%;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            order: 0;
+            /* ordem padrao */
+
+            order: 1;
+            /* Possui um ordem maior e fica exibido por ultimo*/
+
+            order: -1;
+            /* Possui uma ordem menor e é exibido primeiro q os outros*/
+
+            align-self: center;
+            /*Usado para alinhar o elemento que esta referenciando*/
+
+            align-self: flex-end;
+            /* vai para o final */
+
+            align-self: flex-start;
+            /* Vai para o inicio */
+
+            align-self: stretch;
+            /* padrao */
+        }
+
+        .flex-container div {
+            width: 100px;
+            flex-grow: 0;
+            flex-grow: 1;
+            /*todos os elementos iram ocupar por igual o espaço restante*/
+
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2;
+            /* O filho 1 ira ocupar um espaço maior pois tem uma ordem maior*/
+        }
+
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1;
+            /* os elemenetos serao diminuidos para encaixar no conent por igual */
+        }
+
+        .flex-container div:nth-child(2) {
+            flex-shrink: 3;
+            /* o filho 2 será diminuido mais*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>
