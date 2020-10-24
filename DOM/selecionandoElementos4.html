@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando Elementos 4</title>
+    
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(27, 85, 4);
+        font-size: 2rem;
+       
+    }
+    div{
+        width: 320px;
+        height: 250px;
+        border: 5px solid white;
+        text-align: center;
+        margin: 50px;
+    }
+    div:nth-child(1){
+        background-color: burlywood;
+    }
+    div:nth-child(2){
+        background-color: tomato;
+    }
+    div ul{
+        list-style: none;  
+    }
+    div:nth-child(3){
+        background-color: dodgerblue;
+    }
+</style>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>inicio</p>
+    </div>
+    <div>
+        <ul><li>Pedro</li><li>ana</li><li>Bia</li></ul>
+    </div>
+    <div>
+        <p>fim</p>
+    </div>
+    <script>
+        function log(){console.log(this)}
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log 
+        NodeList.prototype.log = log
+        Node.prototype.log = log 
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log()
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild //Seleciona o primeiro elemento da lista (div ul)
+        primeiro.log()
+
+        primeiro.nextSibling.log() //Mostra o segundo elemento
+
+        const ultimo = lista.lastChild //mostra o ultuimo elemento da lista selecionada (div ul)
+        ultimo.log()
+        ultimo.previousSibling.log() //Pega o penultimo elemento
+
+        lista.children.log() // Mostra os elementos 
+        lista.firstElementChild.log() // Mostra literalmente o 1 elemento q foi defenido
+        lista.lastElementChild.log()
+        lista.parentNode.previousSibling.log() //Retorna o elemento anterior a div ul 
+    </script>
+</body>
+
+</html>

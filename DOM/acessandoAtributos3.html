@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando atributos 3</title>
+</head>
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino="escritorio" data-urgencia="10"> 
+            <li>Café</li>
+            <li>Agua</li>
+            <li>Copo descartavel</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('#compras')
+
+        //somente leitura 
+        console.log(lista.attributes);
+
+        console.log(lista.attributes[0])
+        console.log(lista.attributes.id)
+        console.log(lista.attributes[0].value)
+
+        console.log(lista.attributes.destino)
+        console.log(lista.attributes[1])
+        console.log(lista.attributes.destino.value)
+
+        console.log(lista.attributes['data-urgencia']) 
+    </script>
+</body>
+</html>

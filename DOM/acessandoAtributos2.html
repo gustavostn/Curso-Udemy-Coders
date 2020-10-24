@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando atributos 2</title>
+    <style>
+        body {
+            background-color: darkslategrey;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="compras">Compras</label>
+    <ul id="compras" destino="escritorio" data-urgencia="5" data-tipo="lista de compras">
+        <li>Café</li>
+        <li>Agua</li>
+        <li>Copo descartavel</li>
+    </ul>
+    <script>
+        const lista = document.querySelector('#compras')
+        console.log('Elemento "ul"...................');
+
+        console.log('childnodes', lista.childNodes);
+        // Mostra os valores do elemento
+
+
+        console.log('destino', lista.id);
+        //mostra o id da lista
+
+        console.log('destino', lista.destino);
+        //Método errado de obter o retorno do destino
+        console.log('getAttribute', lista.getAttribute('destino'));
+        //Método para obter retorno do destino
+
+        console.log('hasAtrribute', lista.hasAttribute('destino'));
+        //Retorna se o elemento é ou nao um atributo 
+
+        lista.setAttribute('destino', 'empresa');
+        //Altera o valor do elemento
+        lista.setAttribute('status', 'novoStatus')
+        //Serve tambem para adicionar um novo atributo
+        lista.removeAttribute('status')
+        //remove um atributo 
+
+        console.log(lista.dataset)
+        //Retorna o valor do elemento data (pré setado)
+        
+        lista.dataset.tipo = "lista de compras"
+        // altera o valor do elemento selecionado
+
+        console.log(lista.getAttribute('data-tipo'))
+
+        //cuidado
+        const label = document.querySelector('label')
+        console.log(label.for) //Nao é possivel ser acesso pois for é uma palavra reservada da linguagem
+
+        console.log(label.htmlFor) //Usando o htmlxx é possivel acessar 
+        console.log(label.getAttribute('for'))
+    </script>
+</body>
+
+</html>

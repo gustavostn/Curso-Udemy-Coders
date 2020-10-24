@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando atributos 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: darkcyan;
+            font-size: 1.5em;
+            font-family: century gothic;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: tomato;
+            margin: 10px;
+            text-align: center;
+            border: 5px solid white;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <a href="https://www.cod3r.com.br">Cod3r</a>
+    </div>
+    <div id="primeiro">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo cod3r">
+    </div>
+    <script>
+        const img = document.querySelector('img') //Selecionar o atributo img
+       
+        console.log('getAttribute', img.getAttribute('src')); //Selecionar o valor do atributo img (no caso o link da img)
+       
+        console.log('src', img.src) //Outro metodo para selecionar o valor de um elemento
+
+        console.log('["src"]', img['src']) //Outro metodo para selecionar o valor de um elemento como se fosse obj
+
+        console.log('alt', img.alt) //Acessando o alt de img
+
+        console.log('Elemento "img"............')
+        console.log('NodeType', img.nodeType) //NodeType para elemento = 1
+        console.log('NodeName', img.nodeName)
+
+        const src = img.getAttributeNode('src')
+        console.log('atributo "src"...........')
+        console.log('NodeType', src.nodeType)
+        console.log('NodeName', src.nodeName)
+        console.log('NodeValue', src.nodeValue)
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a".............')
+        console.log('href', link.href)
+        console.log('firstchilf', link.firstChild)
+        console.log('firstchilf', link.firstChild.nodeType)
+        link.firstChild.nodeValue = "site cod3r"
+        
+    </script>
+</body>
+
+</html>

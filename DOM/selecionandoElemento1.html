@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/dom.css">
+    <title>Selecionamento Elementeo com DOM #1</title>
+   
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+
+    <script>
+        document.getElementById('primeiro').classList.add('destaque')
+
+        const divs = document.getElementsByTagName('div')
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+        
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+
+        const deselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando classes</title>
+    <style>
+        .destaque {
+            color: pink;
+            background-color: aqua;
+            border: 5px solid;
+            font-size: 45px;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        classes
+    </div>
+    <script>
+        const classe = document.querySelector('div').classList
+        classe.add('destaque')
+        
+
+        classe.remove('destaque')
+
+        classe.toggle('destaque') //Se n tiver add, se ja tiver remove
+
+        console.log(classe.contains('destaque')); //retorna true
+        
+        classe.add('teste1')
+        classe.add('teste2')
+        console.log(classe.length)
+
+        classe.toggle('destaque')//neste caso remove
+
+        for(let c of classe){
+            console.log(c)
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/dom.css">
+    <title>Selecionando Elementos 2</title>
+</head>
+
+<body class="conteudo exercicio">
+    
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+<script>
+     document.querySelector('#primeiro').classList.add('destaque')
+
+     const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+
+     const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+     selecionar('div')
+     deselecionar('.terceiro')
+</script>
+    
+</body>
+</html>

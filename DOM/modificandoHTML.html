@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/dom.css">
+    <style>
+        .destaque {
+            color: plum;
+            background-color: antiquewhite;
+            font-size: 45px;
+            width: 320px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <script>
+        const body = document.querySelector('body') //selecionar elemento
+
+        const div1 = document.createElement('div') //Criar elemento
+        div1.classList.add('destaque') // adicionar class ao elemento
+        div1.innerHTML = 'Primeiro' //adicionar texto no elemento
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor') //setando atributo
+        div2.innerHTML = 'seguindo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'terceiro'
+
+        const div3 = document.createElement('div')
+        div3.appendChild(p) //inserir elemento dentro de outo Pai = div3 | sempre ira adicionar como ultimo filho = p
+
+        body.appendChild(div1) //adicionar elemento no html
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes....')
+        div3.insertBefore(texto, div3.childNodes[0]) 
+        // Insere elementos antes dos elementos que foi selecionado
+        // div2 = onde ser inserido texto = elemento a ser inserifo, div2.childNodes[0] elemento sera inserido antes do 0 
+        
+        const div4 = div3.cloneNode(true) //clonar elemento
+        //True = copia os filhos tbm
+        // false = so copia o elemento pai 
+        
+        body.appendChild(div4)
+        body.removeChild(div3) //remover um elemento do html
+    </script>
+</body>
+
+</html>

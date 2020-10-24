@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/dom.css">
+    <title>Document</title>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>texto inicial</p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto alterado!' //Substitui o conteudo da div
+
+        // div.outerHTML = 'Texto alterado' 
+        //Substitui o elemento como um todod
+
+        div.insertAdjacentHTML('beforebegin', '<p> Antes do começo xD </p>')
+        //Adicionar item antes do elemento (neste caso a DIV)
+        div.insertAdjacentHTML('afterbegin', '<p> Depois do inicio </p>')
+        div.insertAdjacentHTML('beforeend','<p> Antes do fim </p>')
+        div.insertAdjacentHTML('afterend', '<p> Depois do fim </p>')
+
+        //somnete texto (sem tags)
+        console.log(div.innerHTML)
+        console.log(div.innerText)
+    </script>
+</body>
+
+</html>

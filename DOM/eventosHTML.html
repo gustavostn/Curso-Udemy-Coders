@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilo.css">
+    <title>Trabalhando com eventos</title>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!-- onclick="navegarEm5s(event)" -->
+        <a aguarda-5segundos href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function navegarEm5s(e) {
+            e.preventDefault() //Prevenir que o evento padrao ocorra
+            console.log('saindo em 5s');
+            setTimeout(() => {
+                const link = e.target // E = evento e Target = Elemento HTML que dispara o evento (neste caso é o link)
+                window.location.href = link.href
+            }, 5000)
+        }   
+            
+            // const a  = document.querySelector('a')
+            // a.onclick = navegarEm5s // Inserir a funcao no A 
+
+            const a = document.querySelector('[aguarda-5segundos]')
+            a.onclick = navegarEm5s
+    </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 
 //criar de forma literal
 function nomeFuncao() {
-
+    
 }
 
 //Armazenar em uma variavel

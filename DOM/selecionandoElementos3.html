@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos 3</title>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Me pergunte algo...">
+        <select name="hl">
+            <option value="pt-br">Portugês (Brasil)</option>
+            <option value="en-us">Inglês (America do norte)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        // Q = usado para realizar pesquisa no google
+        // hl = usado para definir a lingua que sera realizado a pesquisa
+        console.log(document.forms)
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('pesquisa')) //retorna uma nodeList
+        console.log(document.pesquisa) //retorna o form pesquisa
+        console.log(document.pesquisa.q) //retorna o elemento (q)
+        document.pesquisa.q.value = 'formulario pesquisa google' //alerar o valor do campo do elementeo      
+        
+    </script>
+</body>
+
+</html>
