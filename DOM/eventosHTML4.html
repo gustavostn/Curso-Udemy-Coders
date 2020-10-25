@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com eventos 4</title>
+    <style>
+        body {
+            background-color:teal;
+            align-items: center;
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            width: 200px;
+            padding: 5px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        select{
+            width: 200px;
+            padding: 5px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        button{
+            width: 200px;
+            padding: 5px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulario</h1>
+    <form name="pesquisa" action="https://google.com.br/search">
+        <input type="text" name="q" placeholder="Faça uma pesquisa">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (norte Americano)</option>
+        </select>
+        <button wm-submit>Pesquisar</button>
+    </form>
+    <script>
+        // const pesquisar = document.querySelector('[wm-submit]')
+        // pesquisar.onclick = function(e){
+        //     e.preventDefault()
+        //     //Não realiza a funcao padrao (que seria realizar a pesquisa)
+
+        //     const form = e.target.parentNode
+        //     //acao do botao pesquisar
+        //     const formData = new FormData(form)
+        //     //Obter dados de um formulario
+
+        //     formData.append('funcionado', true)
+        //     //Adiciona um novo campo
+
+           
+        //     console.log(formData.get('q'))
+        //     //Seleciona o que esta no elemento (neste caso q que está realacionado a pesquisa q está sendo selecionada)
+
+        //     console.log(formData.has('hl'))
+        //     //identificar se há o elemento (neste caso hl) no form
+
+        //     for( let dado of formData){
+        //         console.log(dado)
+        //     }
+            
+        // }
+
+        const form = document.forms[0]
+        //seleciona o form 
+
+        form.onsubmit = function(e){
+            e.preventDefault()
+            //Não realizar o evento padrao do submit
+
+        const form = e.target
+        const formData = new FormData(form)
+        
+        formData.append('Está funcionando?', true)
+        //adiciona um novo elemento
+
+        console.log(formData.get('q'));
+        //retornar o elemento 'q'
+
+        console.log(formData.has('Está funcionando?'))
+        //Verifica se há um elemento
+        
+        for(let dado of formData){
+            console.log(dado)
+        }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
