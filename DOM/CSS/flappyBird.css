@@ -1,3 +1,4 @@
+/* AINDA NAO CONCLUIDO, CONTEM UM BUG */
 *{
     box-sizing: border-box;
 }
@@ -15,7 +16,6 @@
     position: absolute;
     width: 60px;
     left: calc(50% - 30px);
-    bottom: 50%
 }
 .par-de-barreiras{
     position: absolute;
@@ -48,4 +48,5 @@
     top: 10;
     left: 20px;
     font-size: 2em;
+    z-index: 100;
 }
