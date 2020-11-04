@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Fetch API #2</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulario Via Fetch</h1>
+    <form name="usuarioForm" action="" method="post">
+        <input type="text name=" nome" placeholder="Nome">
+        <input type="text" name="sobrenome" placeholder="Sobrenome">
+        <button>Salvar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        document.usuarioForm.onsubmit = async e => { //interrompendo a ação padrao do submit do form
+            e.preventDefaukt()
+
+            const form = e.target
+            const data = new FormData(form)
+            data.append('Novo Elemento', true) //Adicionando novos elementos
+
+            const options = {
+                method: form
+                    .method, //método que ira obter os dados (exportando do formulario onde já foi esolhido o método)
+                body: new URLSearchParams(data) //Passar os dados do form p/ o back-end
+            }
+            fetch(form.action, options) //Importando o action do form 
+                .then(resp => resp.json())
+                .then(json => {
+                    const resultado = document.getElementById('resultado')
+                    resultado.innerHTML = JSON.stringify(json)
+                })
+            const resultado = document.getElementById('resultado')
+            fetch(form.action, options)
+        }
+    </script>
+</body>
+
+</html>
