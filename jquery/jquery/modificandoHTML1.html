@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+    <div id='conteudo4'></div>
+    <div ></div>
+
+    <script>
+        //conteudo 1
+        $('#conteudo1').append('<p>1</p>')
+
+        //conteudo 2
+        const elementos = [
+            $('<li>').append('batata'), //criando elemento a partir do jquery
+            $('<li>').append('macarrao'),
+            $('<li>').append('carne'),
+        ]
+
+        const lista = $('<ul><li>Via Jquery<li><ul>').append(elementos) //Adiciona em primeiro
+        const lista2 = $('<ul><li>Ultimooooo by Jquey</ul></li>').prepend()
+        $('#conteudo2').append(lista)
+        $('#conteudo2').append(lista2)
+
+        // conteudo 3
+        $('#conteudo3').append('<h1>1</h1>')
+            .append('<h1>2</h2>').prepend('<h1>0</h1>') //depois do 1 apend
+                                    //Prepend adiciona antes de todos os ourtos
+
+        $('#conteudo4').append(['<h1>Gustavo' , '<h1>Santana' , '<h1>Caravalho'])//outro metodo de colocar um elemento em baixo do outro 
+    
+        $('#conteudo3').html('<h1> 123') //Substituiu o conteudo (neste caso h1 virou 123 em todos os casos)
+        $('#conteudo4').text('<h1>lindao</h1>') //Coloca exatamente o q foi digitado nos h1
+        
+        //Alterando todos de uma vez
+        $('div[id]').html('<strong>TODOS!') //Alterando todos os elementos de uma vez
+        $('div:last').html('menos eu!') //selecionando o ultimo
+    </script>
+</body>

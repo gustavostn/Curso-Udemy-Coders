@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        $('div').hide(500).show(500).fadeOut(500) //Seleciona os elementos DIV e realiza a animao de esconde-los
+        console.log($('div').get(0))
+        console.log($.isEmptyObject({nome: null})); //Para saber se um obj está vazio
+        console.log(jQuery.inArray(3, [1,7,4,3])); // Pesquisar se há um valor dentreo do array -> se n tiver retorna -1, se tiver retorna a posicao do item
+        
+        $.fn.meuPlugin = function (){
+            this.css('background-color', '#171717')
+            return this
+        }
+
+        $('body').meuPlugin ().fadeOut(3000).show(3000)
+    
+   </script>
+</body>

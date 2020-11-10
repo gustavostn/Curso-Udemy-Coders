@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Selecionando Elementos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        .negrito {
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Selecionando Elementos #01</h1>
+    <div>
+        <p>Parágrafo
+            <span class='negrito'>dentro span</span>
+        </p>
+    </div>
+    <div>
+        <ul id='feira'>
+            <li>Arroz</li>
+            <li wm-obrigatorio>Feijão</li>
+            <li class='opcional'>Carne</li>
+            <li class='opcional'>Ovo</li>
+        </ul>
+    </div>
+    <form>
+        <input type='text' name='texto'>
+        <input type='password' name='senha'>
+        <input type='checkbox' name='check1'>
+        <input type='radio' name='radio1'>
+        <input type='file' name='arquivo'>
+    </form>
+
+    <script>
+        $('#feira').addClass('destaque').removeClass('destaque') //Seleciona o ID feira - adc classe - remove classe
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio').removeClass('destaque') //Seleciona o atributo wm... e remove a classe apenas destaqye apenas dq tem o wm
+        $('li.opcional').removeClass('destaque') //seleciona o elem com class opcional e remove a class dest
+        $('div p span').addClass('destaque') //Dentro da div tem p que tem ->span<-
+        //Exclusivos do jquery
+
+        $('li:first').css('border', '10px solid pink')
+        $('li:odd').css('backgroundColor', 'orange') //Selecio os li impares
+        $('li:gt(1)').css('color', 'black') //Seleciona os elementos maiores que 1 gt(x) so ira mudar os valores acima de z
+        $('li:not(:last)').css('textTransform', ('uppercase')) //Seleciona todos os li menos os ultimos 
+        $('li:contains("v")').css('backgroundColor', 'purple') //Seleciona o elemento que contem v
+        $('form *').hide() //Selecionei todos os elementos dos form e desativei o display
+        $('form :text').show() //Selecionando o campo de texto e deixando visivel
+        $('form :password').show() // Selecionando o campo de senha e deixando visivel
+        $('form :checkbox').show() // Checkbox....
+        $('form :radio').show() //radio....
+        $('form :file').show() //file....
+
+
+
+
+    </script>
+</body>
