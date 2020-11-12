@@ -13,13 +13,30 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+        //$(function(){}) Método minimizado para exec os cod dps que a pag for carregada
+        $(document).ready(function () { //SO ira executar o JS depois que toda a pag for formada
+            const alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+            const linhas = alunos.map(alunos => {
+                const tdNome = $('<td>').html(alunos.nome) //Adiciona os nomes dentro do td
+                const tdNota = $('<td>').html(alunos.nota) //Adiciona as notas dentro do 2º TD
+                return $('<tr>').append(tdNome, tdNota) //Retornando o TR e adicionando os 2 td dentro dele
+                //return $('<tr>').append(tdNome).append(tdNota) 
+                //return $('<tr>').append([tdNome, tdNota])
+            })
+            
+            const tabela = $('<table>').append(linhas) //Criando a tabela e adicionando as linhas/estrutura da tabela
+                .css('border', 'solid 5px')
+
+            $('#conteudo').append(tabela) //Adicionando todo o conteudo dentro da tag div com #conteudo
+            
+
+
+
+        })
     </script>
 </body>

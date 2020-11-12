@@ -11,10 +11,24 @@
 <body class='conteudo exercicio'>
     <h1>Manipulando CSS</h1>
     <div id='div1'>1</div>
-    <div id='div2'>2</div>
-    <div id='div3'>3</div>
+    <div id='div2'>2</div> 
     <div id='resultado'></div>
     <script>
-        // ...
+       const fonte = $('#div1').css('font-family') //Selecionando a fonte da div1 e colocando em uma variavel
+       $('#resultado').append(`A fonte é ${fonte}`) //retornando o nome da fonte
+
+       $('#div1').css('font-size','5em') //Aumentando o tamanho da fonte
+       $('#div1').css({'font-size': '3.5em', 'color': 'pink'}) //Usando {} dentro dos () consigo fazer +1 acao
+       $('#div1').css('font-size', function (){
+           return `${5*1.5}em` //Colocando uma funcao, realizando conta e o resultado é o novo tam da fonte 
+       })
+
+       $('#div2').addClass('destaque') //Selecionando a div2 e adicionando a classe destaque 
+       
+       const verificaClasse = $('#div2').hasClass('destaque') //Verifica se há classe na div2 (retona true or false)
+       $('#resultado').append(`<br>Tem classe? ${verificaClasse}` ) //Adiciona o valor da varificaClasse no elemento destaque
+       $('#div2').removeClass('destaque') //removendo a classe destaque
+       $('#div2').toggleClass('destaque') //Remove caso seja true, adc elemento se for false
+       
     </script>
 </body>

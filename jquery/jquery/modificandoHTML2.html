@@ -17,15 +17,33 @@
     <p class='numero'>5</p>
 
     <script>
-      $('#div1').append(',2') // depois do 1
-      $('#div1').prepend('0,')  //antes do 1
-      $('<span>,3</span>').appendTo('#div1') //depois do 2 adc uma span
-      $('<span>-1,</span>').prependTo('#div1')
-      $('#div2').before('<p>antes2</p>') //adc paragrafo antes da div 2
-      $('#div2').after('<p>depois</p>') //adc paragrafo depois da div 2
-      $('<p> antes 3</p>').insertBefore('#div3') //inserir paragrafo antes da div3
-      $('<p> depo')
+        $('#div1').append(',2') // depois do 1
+        $('#div1').prepend('0,')  //antes do 1
+       
+        $('<span>,3</span>').appendTo('#div1') //depois do 2 adc uma span
+        $('<span>-1,</span>').prependTo('#div1')
+       
+        $('#div2').before('<p>antes2</p>') //adc paragrafo antes da div 2
+        $('#div2').after('<p>depois</p>') //adc paragrafo depois da div 2
+       
+        $('<p>antes3</p>').insertBefore('#div3') //inserir paragrafo antes da div3
+        $('<p>depois3</p>').insertAfter('#div3') //inserir o paragrafo depois da div3
+       
+        $('p.numero').wrap('<div>') //Encapsula o elemento 
+        $('p.numero').wrapAll('<div id="div4">') //encapsula todos os elementos em uma div 
+        
+        $("#div4").empty() //esvaziando o conteudo da div4
+        $('#div3, #div4').prev().remove() //Os elementes sao exlcuidos, p voltar tem que reconstruir
+
+        // $('<div>susbstituto</div>').replaceAll('body > p') //todos os P dentro de body vai ser substiuido por div
+      // $('body > p').replaceWith('<div>Substituido!</div>') //mesmo coisa q o de cima
+        $('body > p').replaceWith(function() {
+            return $('<div>').html($(this).html()).append('!!!!!!!!!')
+            //html($(this).html()) -> Pega o conteudo do paragrafo
+            //return $('<div>') -> Adiciona o conteudo na div
+        })
+
+
 
     </script>
 </body>
-
