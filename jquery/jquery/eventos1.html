@@ -20,6 +20,43 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
+        function mostrarPosicaoMouse(e){
+            $('#posicao').html(`x:${e.clientX} y:${e.clientY}`) //Att a posicao do mouse
+        }
+
+        $('body').on('mousemove', mostrarPosicaoMouse) //Adquiri a posicao do meu mouse pelo body
         
+        $('#posicao').mouseover(e => { //usando funcao para analisar um evento
+            $('body').off('mousemove', mostrarPosicaoMouse) //desabilitando a captura de movimento quando o mouse passa pela div
+        })
+
+        $('#posicao').mouseleave(e =>{ //Quando sai de cima da div volta a capturar a pos do mouse
+            $('body').on('mousemove', mostrarPosicaoMouse)
+        })
+
+        let cliques = 0 
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`) //aumentar o valor de cliques a cada click dado no body
+        })
+
+        const BackgroundOriginal = $('body').css('background-color') //armazenando a cor do bg na constante 
+        $('input').keyup(function (e) { //Adquirindo o valor inserido no input
+            const valor = $(this).val() //arm esse valor do input em uma const 
+            if(valor.match(/#[\da-fA-F]{3,6}/)){
+                            // A expressao se inicia com #
+                                //d -> digito (podendo ter valor de a ~ f ou A ~F)
+                                    // -> Os valores podem ser de 3 caracteres ou 6 caracteres
+            $('body').css('background-color', valor) //Caso a expressao tenha todos os dados ira trocar a cor de fundo
+            }else{
+                $('body').css('background-color', BackgroundOriginal) //Se nao ira manter a padrao
+            }       
+                   
+        }) 
+
+
+
+
+
+
     </script>
 </body>
