@@ -10,6 +10,7 @@
         div {
             text-align: center;
         }
+
         button {
             font-size: 1.8em;
             margin: 10px;
@@ -22,7 +23,16 @@
     <button>Iniciar</button>
     <div id='animar'>Animar!</div>
 
-    <script>        
-        // ...
+    <script>
+        $('button').click(e => { //Selecionadno o botao e adicionando uma func para o evento dele
+            const t = 450 //Definindo um tmepo para as animações
+            //$('#animar').hide(t).show(t) //Selecionadno o id e adicionando as ainimações nele
+            //$('#animar').toggle(t).toggle(t) //Usando o toggle para animar, se esiver exibindo ele esconde e ....
+            //$('#animar').fadeOut(t).fadeIn(t) //animacao de desaparecer e aparecer
+            //$('#animar').fadeToggle(t).fadeToggle(t) //mesma coisa que o de cima
+            //$('#animar').slideUp(t).slideDown(t)//Animação que move p cima 
+            $('#animar').slideToggle(t).slideToggle(t)//Mesma coisa que o de cima 
+
+        })
     </script>
 </body>

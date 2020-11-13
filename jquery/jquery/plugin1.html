@@ -22,6 +22,27 @@
     </div>
 
     <script>
-        // ...
+         $(function(){//so inicia o script dps q toda a pag carregar
+            (function ($) {//garante que toda a $ será usado como jquery
+                $.fn.interpretar = function () {
+                    const retirarChaves = s => s.substring(2, s.length - 2) //Retira o 2 primeiros e os ultimos caracteres 
+                    const conteudo = $(this).html() //Selecionar o conteudo o elemento acima (utilizando o this)
+                    const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g) //Atraves da rejex consigo ler tudo dentro de uma chave literal {{...}}
+                    const expressoes = expressoesComChaves.map(retirarChaves) //selecionando os valores dentro do array com map e tirando as {{}}
+                    const resultado = expressoes.map(e => eval(e)) //pegar os elementos da expressao e colocando dentro do eval
+
+
+                    let conteudoFinal = conteudo
+                    for (let i = 0; i < expressoesComChaves.length; i++) {
+                        conteudoFinal = conteudoFinal.replace(
+                            expressoesComChaves[i], resultado[i]
+                        )
+                    }
+                    $(this).html(conteudoFinal)
+                }
+            })(jQuery)
+            $('div').interpretar()
+         })
+        
     </script>
 </body>

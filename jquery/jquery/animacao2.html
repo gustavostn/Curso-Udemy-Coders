@@ -28,6 +28,79 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        // function alterarLargura(valor, duracao, callback) {
+        //     $('div').animate({ width: `+=${valor}` }, duracao, callback)
+        // }
+
+        // function moverDiagonal(valor, duracao, callback) {
+        //     $('div').animate({ top: `+=${valor}`, left: `+=${valor}`}, duracao, callback)
+        // }
+
+        // function girar(valor, duracao, callback) {
+        //     $('div').animate({ transform: `+=${valor}` }, {
+        //         step: function (valor) {
+        //             $(this).css('transform', `rotate(${valor}deg)`)
+        //         },
+        //         duration: duracao
+        //     }, 'linear', callback)
+        // }
+
+        // alterarLargura(500, 500, () =>{
+        //     alterarLargura(-500, 1000, () => {
+        //         moverDiagonal(300, 450, () => {
+        //             moverDiagonal(-300, 700, () =>{
+        //                 girar(1440, 5000, () => {
+        //                     girar(-360, 600)
+        //                 })
+        //             })
+        //         })
+        //     })
+        // })
+        
+        //utilizando promisse
+        $(function () {
+            function alterarLargura(valor, duracao) {
+                return new Promise((resolve, reject) => {
+                    try{
+                        $('div').animate({ width: `+=${valor}` }, duracao)
+                    } catch (e) {
+                        rejetc(e)
+                    }
+                })
+            }
+ 
+            function moverDiagonal(valor, duracao) {
+                return new Promise((resolve, reject) => {
+                    try{
+                        $('div').animate({ top: `+=${valor}`, left: `+=${valor}` }, duracao)
+                    } catch (e) {
+                        reject(e)
+                    }
+                })
+            }
+ 
+            function girar(valor, duracao) {
+                return new Promise((resolve, reject) => {
+                    try {
+                        $('div').animate( { transform: `+=${valor}` }, {
+                            step: function (valor) {
+                                $(this).css('transform', `rotate(${valor}deg)`)
+                            },
+                            duration: duracao,
+                            easing: 'linear'
+                        })
+                    } catch (e) {
+                        reject(e)
+                    }
+                })
+            }
+ 
+            alterarLargura(500, 1000)
+                .then(alterarLargura(-500,2000))
+                .then(moverDiagonal(500, 1000))
+                .then(girar(1440, 3000))
+                .catch(e => console.log(e))
+        })
+            
     </script>
 </body>
