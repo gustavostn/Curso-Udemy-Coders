@@ -1,0 +1,7 @@
+@import "~bootstrap/scss/bootstrap"; //importando o scss dentro da pasta nodemodules
+
+$fa-font-path: "~font-awesome/fonts"; //Sobreescrevendo uma var do SCSS para dizer onde está as fontes
+@import "~font-awesome/scss/font-awesome"; //importando a var de fontes
+@import "custom";
+
+
